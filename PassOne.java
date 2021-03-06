@@ -231,3 +231,38 @@ void passOne(BufferedReader br) throws Exception {
 											}
 												loc++;
 			
+											}
+						
+						else{
+							if(token[1].equals("DS") || token[1].equals("DC")) {
+									
+									int len = Integer.parseInt(token[2]);
+									k = search(token[0]);
+
+									if (k == -1){
+										ST[sIndex] = new Symbol(token[2]);
+										k = sIndex;
+										sIndex++;
+									}
+
+									if(token[1].equals("DS")){
+										int val = POT.get(token[1]);
+										System.out.println("(DL "+ val+") - (C "+token[2]+")"); 
+										fw.write("DL 1 - C "+token[2]+"\n");
+										ST[k].setLen(len);
+										ST[k].addr = loc;
+										loc+=len;
+									}
+									
+									else{ 
+										int val = POT.get(token[1]);
+										System.out.println("(DL "+val+ ") - (C "+token[2]+")");
+										fw.write("DL 2 - C "+token[2]+"\n"); 
+										ST[k].setLen(1);
+										ST[k].addr = loc;
+										loc+=1;
+									}
+							}
+					}
+				}
+			}
