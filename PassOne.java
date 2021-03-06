@@ -295,3 +295,5 @@ void passOne(BufferedReader br) throws Exception {
 
 	File f = new File("input.txt");
 	BufferedReader br = new BufferedReader(new FileReader(f));
+	
+	PassOne obj = new PassOne();
