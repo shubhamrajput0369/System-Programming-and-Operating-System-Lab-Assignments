@@ -291,4 +291,6 @@ void passOne(BufferedReader br) throws Exception {
 				System.out.println(PTAB[i]);
 			}
 			}
+	public static void main(String[] args) throws Exception {
+
 	
