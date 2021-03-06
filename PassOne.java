@@ -18,4 +18,14 @@ class Symbol
 		this.sname = name;
 	}
 	
-	
+	Symbol(String name, int addr) 
+	{
+		this.sname = name;
+		this.addr = addr;
+	}
+
+    void setLen(int l)
+	{ 
+		this.length = l;
+	}
+}
