@@ -42,3 +42,34 @@ public class PassOne{
 		HashMap<String, Integer> RT = new HashMap <String, Integer>(); 
 		int PTAB[]=new int[10];
 
+		Symbol ST[] = new Symbol[20]; 
+		Literal LT[] = new Literal[20];
+		int sIndex, lIndex, loc, pindex;
+
+		PassOne(){
+			sIndex = 0;
+			lIndex = 0;
+			loc = 0;
+			pindex = 0; 
+			PTAB[0] = 0;
+		
+			
+			//imperative 
+			MOT.put("STOP", 0);
+			MOT.put("MOVER",1); 
+			MOT.put("MOVEM",2);
+			MOT.put("ADD", 3);
+			MOT.put("SUB", 4); 
+			MOT.put("MUL", 5);
+			MOT.put("DIV", 6); 
+			MOT.put ("BC", 7);
+
+			//assembler dir
+			POT.put("START", 1);
+			POT.put("END" ,  2);
+			POT.put("EQU",   3); 
+			POT.put("LTORG", 4);
+			POT.put("ORIGIN",5);
+			POT.put("DS", 6);
+			POT.put("DC", 7);
+
