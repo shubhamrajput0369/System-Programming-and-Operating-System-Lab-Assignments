@@ -89,3 +89,11 @@ public class PassOne{
 			RT.put("DREG", 4);
 
 		}
+		int search(String s){
+
+		for(int i = 0; i<sIndex; i++){ 
+			if(ST[i].sname.equals(s))
+				return i;
+			}
+		return -1;
+		}
