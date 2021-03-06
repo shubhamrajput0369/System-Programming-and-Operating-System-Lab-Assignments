@@ -35,3 +35,10 @@ class Literal{
 		int addr;
 }
 
+public class PassOne{
+		HashMap<String, Integer> POT = new HashMap <String, Integer>();
+		HashMap<String, Integer> MOT = new HashMap <String, Integer>(); 
+		HashMap<String, Integer> BCCODE = new HashMap <String, Integer>();
+		HashMap<String, Integer> RT = new HashMap <String, Integer>(); 
+		int PTAB[]=new int[10];
+
