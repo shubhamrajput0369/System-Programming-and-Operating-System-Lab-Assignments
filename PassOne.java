@@ -29,3 +29,9 @@ class Symbol
 		this.length = l;
 	}
 }
+
+class Literal{
+		String literal; 
+		int addr;
+}
+
