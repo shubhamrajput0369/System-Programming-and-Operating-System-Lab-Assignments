@@ -123,3 +123,111 @@ public class PassOne{
 				fw.close();
 		}
 	
+void passOne(BufferedReader br) throws Exception {
+
+			String st = "";
+			int k;
+
+			FileWriter fw = new FileWriter("Pass1_output.txt");
+
+			while((st = br.readLine())!= null){
+					String token[] = st.split("[ \t]+");
+					
+					if(token.length>4){
+						System.out.println("invalid");
+					} 
+					else{
+						if(token.length==4)
+						{
+							k = search(token[0]);
+							if (k == -1){
+								ST[sIndex] = new Symbol(token[0], loc);
+								sIndex++;
+
+							}
+							else {
+								System.out.println("duplicate Lable");
+							}
+						token[0]=token[1];
+						token[1]=token[2];
+						token[2]=token[3];
+						}
+
+						if(POT.containsKey(token[0]))
+						{
+								int val = POT.get(token[0]);
+
+								if(token[0].equals("START")){ 
+									if(token.length == 2) {
+											loc = Integer.parseInt(token[1]);
+									}
+									else if(token.length>2){
+										System.out.println("Error");
+										fw.write("Error");
+									}
+									System.out.println("(AD "+val+") (C "+loc+")");
+									fw.write("AD "+val+" C "+ loc +"\n"); 	//after correction
+								}
+
+								else if(token[0].equals("END")){ 
+									for (int i=PTAB[pindex]; i<lIndex; i++) {
+										LT[i].addr = loc;
+										loc++;
+									}
+								System.out.println("(AD "+val+")"); 
+								fw.write("AD "+val+"\n");
+								}
+
+								else if(token[0].equals("LTORG")){ 
+									for(int i=PTAB[pindex]; i<lIndex; i++) {
+									LT[i].addr = loc;
+									loc++;
+									}
+									System.out.println("(AD "+val+")"); 
+									fw.write("AD "+val+"\n");
+									PTAB[++pindex]=lIndex;
+								}
+						}
+
+						else if(MOT.containsKey(token[0])) 
+						{
+										int val = MOT.get(token[0]);
+										int reg = 0,flag=0,cc_val=0;
+										char ch;
+
+										if(RT.containsKey(token[1])) 
+											reg = RT.get(token[1]);
+
+										if(BCCODE.containsKey(token[1]))
+										{
+											flag=1;
+											cc_val = BCCODE.get(token[1]);
+										}
+										
+										if(token[2].charAt(0) == '=') {
+											ch = 'L';
+											LT[lIndex] = new Literal();
+											LT[lIndex].literal = token[2].substring(1);
+											k = lIndex;
+											lIndex++;
+										} 
+
+										else {
+											ch = 'S';
+											k = search(token[2]);
+											if(k == -1){
+												ST[sIndex] = new Symbol(token[2]);
+												k = sIndex;
+												sIndex++;
+											}
+										}
+											if(flag==0){
+												System.out.println("(IS "+val+") "+reg+" ("+ch+" "+k+")"); 
+												fw.write("IS "+val+" "+reg+" "+ch+" "+k+"\n");
+											}
+											else if(flag==1){
+												System.out.println("IS "+val+" "+cc_val+" "+ch+" "+k);
+												fw.write("IS "+val+" "+cc_val+" "+ch+" "+k+"\n");
+											}
+												loc++;
+			
