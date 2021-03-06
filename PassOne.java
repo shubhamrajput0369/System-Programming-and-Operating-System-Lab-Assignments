@@ -266,3 +266,29 @@ void passOne(BufferedReader br) throws Exception {
 					}
 				}
 			}
+			fw.close();
+			printTables();
+			System.out.println("-----------SYMBOL TABLE------------");
+			System.out.println("___________________________________");
+			System.out.println("SIndex\tSname\tAddress\tLength");
+
+			for (int i=0; i < sIndex; i++){	
+				System.out.println(i+"\t"+ST[i].sname+"\t"+ST[i].addr+"\t"+ST[i].length);
+			}
+
+			System.out.println("-------LITERAL TABLE---------");
+			System.out.println("_____________________________"); 
+			System.out.println("Lindex\tliteral\tAddress");
+
+			for(int i=0; i<lIndex; i++) 
+			{ 
+				System.out.println(i+"\t"+LT[i].literal+"\t"+LT[i].addr);
+			}
+
+			System.out.println("-------------POOL TABLE-----------");
+
+			for (int i=0; i<=pindex; i++){
+				System.out.println(PTAB[i]);
+			}
+			}
+	
