@@ -97,3 +97,29 @@ public class PassOne{
 			}
 		return -1;
 		}
+		void printTables() throws Exception{
+
+				FileWriter fw = new FileWriter("symbolTable.txt");
+				fw.write("sname\taddress\tlength\n");
+
+				for (int i=0; i<sIndex; i++){ 
+					fw.write(ST[i].sname+"\t"+ST[i].addr+"\t"+ST[i].length+"\n");
+				}
+				fw.close();
+
+				fw = new FileWriter("literalTable.txt");
+				fw.write("lname\taddress\n");
+
+				for(int i=0; i<lIndex; i++){ 
+					fw.write(LT[i].literal+"\t"+LT[i].addr+"\n");
+				}
+				fw.close();
+
+				fw = new FileWriter("poolTable.txt");
+				fw.write("PoolIndex\n");
+				for (int i=0; i<=pindex; i++){
+					fw.write(PTAB[i]+"\n");
+				}
+				fw.close();
+		}
+	
