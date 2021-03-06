@@ -73,3 +73,19 @@ public class PassOne{
 			POT.put("DS", 6);
 			POT.put("DC", 7);
 
+			//bccode
+			BCCODE.put("LT", 1);
+			BCCODE.put("LE", 2); 
+			BCCODE.put("GT", 3);
+			BCCODE.put("GE", 4); 
+			BCCODE.put("EQ", 5);
+			BCCODE.put("ANY",6);
+
+			//Registers
+
+			RT.put("AREG", 1);
+			RT.put("BREG", 2); 
+			RT.put("CREG", 3);
+			RT.put("DREG", 4);
+
+		}
