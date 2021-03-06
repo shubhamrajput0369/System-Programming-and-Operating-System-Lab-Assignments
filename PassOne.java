@@ -294,4 +294,4 @@ void passOne(BufferedReader br) throws Exception {
 	public static void main(String[] args) throws Exception {
 
 	File f = new File("input.txt");
-	
+	BufferedReader br = new BufferedReader(new FileReader(f));
