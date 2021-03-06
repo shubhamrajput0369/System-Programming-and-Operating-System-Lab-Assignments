@@ -297,3 +297,4 @@ void passOne(BufferedReader br) throws Exception {
 	BufferedReader br = new BufferedReader(new FileReader(f));
 	
 	PassOne obj = new PassOne();
+		obj.passOne(br);
