@@ -68,6 +68,12 @@ class PassTwo
 		File pTab = new File("POOLTable.txt"); 
 		BufferedReader br = new BufferedReader (new FileReader (fSymTab));	
 		
+		String st=br.readLine();
+		
+		while((st = br.readLine()) != null){
+			String token[] = st.split("\t");
+			ST[sIndex] = new Symbol(token[0], Integer.parseInt(token[1]), Integer.parseInt(token[2]));
+			sIndex++;		
 
 
 	public static void main(String[] args) throws Exception {
