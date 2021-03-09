@@ -115,6 +115,18 @@ class PassTwo
 		}
 }
 
+	void passTwo(BufferedReader br) throws Exception {
+			String st = "";
+			int k;
+			FileWriter fw = new FileWriter("output.txt");
+
+			System.out.println("\n\n***Machine Code***\n");
+			while((st = br.readLine()) != null){ 
+				
+				String token[] = st.split(" ");
+				//System.out.println(st);
+				//check AD
+
 
 
 	public static void main(String[] args) throws Exception {
