@@ -74,6 +74,27 @@ class PassTwo
 			String token[] = st.split("\t");
 			ST[sIndex] = new Symbol(token[0], Integer.parseInt(token[1]), Integer.parseInt(token[2]));
 			sIndex++;		
+		}
+		br.close();
+		br = new BufferedReader(new FileReader (flitTab));
+		br.readLine();
+
+		while((st = br.readLine()) != null){
+			String token[] = st.split("\t");
+			LT[lIndex] = new Literal(token[0], Integer.parseInt(token[1]));
+			lIndex++;
+		}
+
+		br.close();
+		br = new BufferedReader (new FileReader (pTab));
+        	br.readLine();
+
+		while((st = br.readLine()) != null){ 
+			String token[] = st.split("\t");
+			PTAB[pindex] = Integer.parseInt(token[0]);
+			pindex++;
+		}
+		
 
 
 	public static void main(String[] args) throws Exception {
