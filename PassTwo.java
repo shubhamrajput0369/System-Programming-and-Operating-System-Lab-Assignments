@@ -59,6 +59,16 @@ class PassTwo
 		//POT.put(7, "DC");
 	}
 
+	
+
+	void initTables() throws Exception
+	{
+		File fSymTab = new File("symbolTable.txt");
+		File flitTab = new File("literalTable.txt"); 
+		File pTab = new File("POOLTable.txt"); 
+		BufferedReader br = new BufferedReader (new FileReader (fSymTab));	
+		
+
 
 	public static void main(String[] args) throws Exception {
 			File f = new File("Pass1_output.txt"); 
