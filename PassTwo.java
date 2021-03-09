@@ -95,6 +95,26 @@ class PassTwo
 			pindex++;
 		}
 		
+		br.close();
+		System.out.println("******Symbol Table*******"); 
+		System.out.println("sIndex\tsName\tsAddr\tsLen");
+		for (int i=0; i<sIndex; i++) {
+			System.out.println(i+"\t"+ST[i].sname+"\t"+ST[i].addr+"\t"+ST[i].length);
+		}
+		
+		System.out.println("\n***Literal Table***"); 
+		System.out.println("Index\t]Name\tAddr");
+		for(int i=0; i<lIndex; i++){
+			System.out.println(i+"\t"+LT[i].literal+"\t"+LT[i].addr);
+		}
+
+		System.out.println("\n***POOL Table***");
+		System.out.println("PIndex");
+		for (int i=0; i<pindex; i++) {
+			System.out.println(PTAB[i]);
+		}
+}
+
 
 
 	public static void main(String[] args) throws Exception {
