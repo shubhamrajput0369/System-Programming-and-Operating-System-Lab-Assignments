@@ -152,6 +152,31 @@ class PassTwo
 					}					
 
 				}		
+				else if (token[0].equals("DL")) {
+					int c=Integer.parseInt(token[1]);
+					if (c==2)
+					{ 
+						System.out.println(loc+") 00 00"+token[4]);
+						fw.write(loc+") 00 00"+token[4]+"\n");
+						loc+=1;
+					}
+					else	
+					{
+						System.out.println(loc+")");
+						fw.write(loc+")\n");
+						loc+=Integer.parseInt(token[4]);
+					}
+				}
+	
+				else{
+					//IS
+					//symbol
+					if(token[3].equals("S")){
+						int symAddr = ST[Integer.parseInt(token[4])].addr; 
+						System.out.println(loc+") 0"+token[1]+" "+token[2]+" "+symAddr);
+						fw.write(loc+") 0"+token[1]+" "+token[2]+" "+symAddr+"\n");
+						loc+=1;
+					}
 
 
 	public static void main(String[] args) throws Exception {
