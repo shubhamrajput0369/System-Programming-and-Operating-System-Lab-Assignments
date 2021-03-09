@@ -9,6 +9,20 @@ import java.io.PrintWriter;
 import java.util.HashMap; 
 import java.util.Iterator;
 
+class Symbol
+{
+	String sname;
+	int addr;
+	int length;
+
+	Symbol(String name, int addr, int len) {
+			this.sname = name; 
+			this.addr = addr;
+			this.length = len;
+	}
+}
+
+
 
 	public static void main(String[] args) throws Exception {
 			File f = new File("Pass1_output.txt"); 
