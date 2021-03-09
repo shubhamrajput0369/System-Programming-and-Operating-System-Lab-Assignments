@@ -43,6 +43,13 @@ class PassTwo
 	int PTAB[]=new int[10]; 
 	int sIndex,lIndex, loc, pindex,pcount;
 
+		PassTwo(){
+		sIndex = 0; 
+		lIndex = 0;
+		loc = 0;
+		pindex = 0;
+		pcount = 0;
+
 
 
 	public static void main(String[] args) throws Exception {
