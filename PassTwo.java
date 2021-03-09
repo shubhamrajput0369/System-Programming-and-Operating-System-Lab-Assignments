@@ -22,6 +22,14 @@ class Symbol
 	}
 }
 
+class Literal {
+	String literal; int addr;
+	
+	Literal(String lit, int addr){
+			this.literal = lit;
+			this.addr = addr;	
+	}
+}
 
 
 	public static void main(String[] args) throws Exception {
