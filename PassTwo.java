@@ -126,6 +126,30 @@ class PassTwo
 				String token[] = st.split(" ");
 				//System.out.println(st);
 				//check AD
+				if(token[0].equals("AD")){
+					String pot_content = POT.get(Integer.parseInt(token[1]));
+					if (pot_content.equals("START")){
+						if(token.length==4)
+							loc = Integer.parseInt(token[3]);
+						else
+							loc = 0;
+					}
+					else if (pot_content.equals("END")){
+							for (int i=PTAB[pcount]; i<lIndex; i++){ 
+								System.out.println(loc+") 00 00"+LT[i].literal);
+								fw.write(loc+") 00 00"+LT[i].literal+"\n");
+								loc++;
+							}
+						pcount++;
+					}
+					else if (pot_content.equals("LTORG")){
+							for (int i=PTAB[pcount]; i<PTAB[pcount+1]; i++){ 
+								System.out.println(loc+") 00 00"+LT[i].literal);
+								fw.write(loc+") 00 00"+LT[i].literal+"\n");
+								loc++;
+							}
+						pcount++;
+					}					
 
 
 
