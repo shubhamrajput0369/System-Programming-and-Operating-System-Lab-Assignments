@@ -32,6 +32,19 @@ class Literal {
 }
 
 
+class PassTwo
+{
+	
+	HashMap<Integer, String> POT = new HashMap <Integer, String>(); 
+	
+	Symbol ST[] = new Symbol[20];
+	Literal LT[] = new Literal[20];
+
+	int PTAB[]=new int[10]; 
+	int sIndex,lIndex, loc, pindex,pcount;
+
+
+
 	public static void main(String[] args) throws Exception {
 			File f = new File("Pass1_output.txt"); 
 			BufferedReader br = new BufferedReader(new FileReader (f));
