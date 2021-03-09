@@ -177,6 +177,12 @@ class PassTwo
 						fw.write(loc+") 0"+token[1]+" "+token[2]+" "+symAddr+"\n");
 						loc+=1;
 					}
+					else{
+						int litAddr = LT[Integer.parseInt(token[4])].addr; 
+						System.out.println(loc+") 0"+token[1]+" "+token[2]+" "+litAddr);
+						fw.write(loc+") 0"+token[1]+" "+token[2]+" "+litAddr+"\n");
+						loc+=1;
+					} 
 
 
 	public static void main(String[] args) throws Exception {
