@@ -50,6 +50,14 @@ class PassTwo
 		pindex = 0;
 		pcount = 0;
 
+				POT.put(1, "START");
+		POT.put(2, "END"); 
+		POT.put(3, "EQU");
+		POT.put (4, "LTORG");
+		POT.put(5, "ORIGIN"); 
+		//POT.put(6, "DS");
+		//POT.put(7, "DC");
+	}
 
 
 	public static void main(String[] args) throws Exception {
