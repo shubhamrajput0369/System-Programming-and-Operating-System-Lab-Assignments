@@ -183,7 +183,10 @@ class PassTwo
 						fw.write(loc+") 0"+token[1]+" "+token[2]+" "+litAddr+"\n");
 						loc+=1;
 					} 
-
+				}
+			}
+		fw.close();
+}
 
 	public static void main(String[] args) throws Exception {
 			File f = new File("Pass1_output.txt"); 
